@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hesap Makinesi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <main class="app">
+    <header class="app__header">
+      <div class="brand">
+        <div class="brand__icon" aria-hidden="true">▚</div>
+        <div>
+          <h1 class="brand__title">Hesap Makinesi</h1>
+          <p class="brand__subtitle">Klavye ile de kullanabilirsiniz</p>
+        </div>
+      </div>
+      <button id="themeToggle" class="icon-btn" type="button" title="Temayı değiştir" aria-label="Temayı değiştir">
+        <span id="themeIcon">☾</span>
+      </button>
+    </header>
+
+    <section class="card" aria-label="Hesap makinesi">
+      <div class="display">
+        <div id="expression" class="display__expression" aria-live="polite">&nbsp;</div>
+        <output id="display" class="display__result" aria-live="polite">0</output>
+      </div>
+
+      <div id="historyPanel" class="history" hidden>
+        <div class="history__head">
+          <h2>Geçmiş</h2>
+          <button id="clearHistory" class="text-btn" type="button">Temizle</button>
+        </div>
+        <ul id="historyList" class="history__list"></ul>
+      </div>
+
+      <div class="keys" id="keys">
+        <button class="key key--fn" type="button" data-action="clear">AC</button>
+        <button class="key key--fn" type="button" data-action="sign">(−)</button>
+        <button class="key key--fn" type="button" data-action="percent">%</button>
+        <button class="key key--op" type="button" data-op="/">÷</button>
+
+        <button class="key" type="button" data-digit="7">7</button>
+        <button class="key" type="button" data-digit="8">8</button>
+        <button class="key" type="button" data-digit="9">9</button>
+        <button class="key key--op" type="button" data-op="*">×</button>
+
+        <button class="key" type="button" data-digit="4">4</button>
+        <button class="key" type="button" data-digit="5">5</button>
+        <button class="key" type="button" data-digit="6">6</button>
+        <button class="key key--op" type="button" data-op="-">−</button>
+
+        <button class="key" type="button" data-digit="1">1</button>
+        <button class="key" type="button" data-digit="2">2</button>
+        <button class="key" type="button" data-digit="3">3</button>
+        <button class="key key--op" type="button" data-op="+">+</button>
+
+        <button class="key key--fn" type="button" data-action="parenthesis">(</button>
+        <button class="key" type="button" data-digit="0">0</button>
+        <button class="key key--fn" type="button" data-action="decimal">,</button>
+        <button class="key key--eq" type="button" data-action="equals">=</button>
+      </div>
+    </section>
+
+    <p class="hint">
+      Klavye kısayolları: <kbd>0-9</kbd> rakam, <kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd> işlem,
+      <kbd>Enter</kbd> eşittir, <kbd>Esc</kbd> temizle, <kbd>Backspace</kbd> sil.
+    </p>
+  </main>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
